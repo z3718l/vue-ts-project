@@ -4,6 +4,9 @@
     <br />
       <p class="p1">{{ab}}</p>
     <br />
+    <p>
+      <img src="../assets/images/aa.png" alt="">
+    </p>
     <router-link to="/login">Go to Login</router-link>
     <router-view></router-view>
   </div>

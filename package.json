@@ -8,6 +8,11 @@
     "dev": "webpack-dev-server --mode=development",
     "build": "webpack --config webpack.config.js --mode=development"
   },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zz3718/vue-ts-project.git"
@@ -25,7 +30,10 @@
   "devDependencies": {
     "autoprefixer": "^9.6.1",
     "clone-deep": "^4.0.1",
+    "commitizen": "^4.0.3",
     "css-loader": "^3.2.0",
+    "cz-conventional-changelog": "^3.0.2",
+    "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
@@ -35,6 +43,7 @@
     "style-loader": "^1.0.0",
     "ts-loader": "^6.0.4",
     "typescript": "^3.5.3",
+    "url-loader": "^2.1.0",
     "vue-loader": "^15.7.1",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.10",

@@ -42,6 +42,26 @@ module.exports = {
             }
         }
         ]
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [{
+          loader: "file-loader",
+          options: {
+            name: 'style/fonts/[name].[ext]'
+          }
+        }]
       }
     ]
   },
