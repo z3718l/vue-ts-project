@@ -1,3 +1,6 @@
 <template>
-  <div>登录</div>
+  <div>
+    <div class="title">登录页</div>
+  </div>
 </template>
+

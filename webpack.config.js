@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   // entry: path.join(__dirname, 'src/h5/pages/index.js'),
@@ -20,7 +21,25 @@ module.exports = {
       },{
         test: /\.ts$/,
         exclude: /node_modules/,
-        loader: 'ts-loader'
+        loader: 'ts-loader',
+        options: {
+          appendTsSuffixTo: [/\.vue$/]
+        }
+      },
+      {
+        test: /\.(css|scss)$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          {
+            loader: 'sass-resources-loader',
+            options: {
+                resources: [
+                    path.resolve(__dirname, './src/assets/scss/global.scss').toString()
+                ]
+            }
+        }
+        ]
       }
     ]
   },
@@ -42,7 +61,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, './dist'),
     host: 'localhost',
-    open: true,
+    // open: true,
     port: 8081
   }
 }
