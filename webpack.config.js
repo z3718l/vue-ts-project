@@ -70,7 +70,7 @@ module.exports = {
     modules: ['node_modules'],
     alias: {
       vue: 'vue/dist/vue.min.js',
-      '@': path.join(__dirname, `../src`)
+      '@': path.join(__dirname, `./src`)
     }
   },
   plugins: [
