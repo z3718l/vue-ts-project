@@ -1,0 +1,23 @@
+{
+  "exclude": [
+    "./node_modules"
+  ],
+  "compilerOptions": {
+    "typeRoots": [
+      "node_modules/@types",
+      "node_modules/vue/types",
+      "src/types"
+    ],
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "esnext",
+    "target": "es5",
+    "jsx": "react",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "strictFunctionTypes": false,
+    "moduleResolution": "node",
+  }
+}
