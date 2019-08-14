@@ -3,7 +3,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   // entry: path.join(__dirname, 'src/h5/pages/index.js'),
@@ -79,9 +79,20 @@ module.exports = {
     // new webpack.HashedModuleIdsPlugin(),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './index.html')
+      filename: 'index.html',
+      favicon: path.resolve(__dirname, './src/assets/favicon.ico'),
+      inject: true,
+      template: path.resolve(__dirname, './index.html'),
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true
+      }
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'style/[name].css',
+      chunkFilename: 'style/[name].css'
+    })
   ],
   devServer: {
     // disableHostCheck: true,
