@@ -4,7 +4,7 @@ import App from '../components/App.vue'
 import { router } from '../router/index'
 import { store } from '../store/'
 Vue.use(VueRouter)
-
+// Vue.config.devtools = true
 
 new Vue({
   el: '#app',
