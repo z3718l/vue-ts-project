@@ -2,14 +2,17 @@ const webpack = require('webpack')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 // const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   // entry: path.join(__dirname, 'src/h5/pages/index.js'),
+  target: 'web',
+  mode: 'development',
   entry: './src/pages/index.ts',
   devtool: 'inline-source-map',
   output: {
-    path: path.resolve(__dirname, '/dist'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
   module: {
@@ -67,9 +70,8 @@ module.exports = {
   },
   resolve: {
     extensions: ['.vue', '.js', '.ts'],
-    modules: ['node_modules'],
     alias: {
-      vue: 'vue/dist/vue.min.js',
+      'vue$': 'vue/dist/vue.esm.js',
       '@': path.join(__dirname, `./src`)
     }
   },
@@ -78,9 +80,11 @@ module.exports = {
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './index.html')
-    })
+    }),
+    new CleanWebpackPlugin()
   ],
   devServer: {
+    // disableHostCheck: true,
     contentBase: path.join(__dirname, './dist'),
     host: 'localhost',
     // open: true,
