@@ -4,7 +4,9 @@
     <br />
       <p class="p1">{{ab}}</p>
       <button @click="changeNum()">点击事件</button>
-    <br />
+    <p>
+      <button @click="btnClick()">点击发送请求</button>
+    </p>
     <p>
       <img src="../assets/images/aa.png" alt="">
     </p>
@@ -24,6 +26,12 @@ export default class App extends Vue {
     store.commit('increment')
     this.aa = store.state.count
     console.log(this.aa)
+  }
+
+  btnClick() {
+    this.$http.get('listData').then(res => {
+      console.log(res)
+    })
   }
 
   mounted () {
