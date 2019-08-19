@@ -16,10 +16,13 @@
 </template>
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import { store } from '../store';
+import { store } from '../store'
+// import _ from 'lodash'
 export default class App extends Vue {
   ab: string = '12313321'
   aa: number = 0;
+  array: Array<number> = [1, 2]
+  other: Array<number>
   changeNum(): void {
     console.log('点击')
     console.log(store)
@@ -37,6 +40,7 @@ export default class App extends Vue {
   mounted () {
     console.log('111111')
     console.log(store)
+    // this.other = _.concat(this.array, [3,4])
   }
 }
 </script>

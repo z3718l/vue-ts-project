@@ -11,7 +11,7 @@ module.exports = (env, argv) => {
       contentBase: [path.join(__dirname, '../dist')],
       hot: true,
       host: 'localhost',
-      port: 8081,
+      port: 8102,
       stats: 'errors-only',
     }
   })
