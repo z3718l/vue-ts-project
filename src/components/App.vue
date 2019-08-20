@@ -17,7 +17,7 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
 import { store } from '../store'
-// import _ from 'lodash'
+import _ from 'lodash'
 export default class App extends Vue {
   ab: string = '12313321'
   aa: number = 0;
@@ -34,6 +34,8 @@ export default class App extends Vue {
   }
 
   btnClick() {
+    this.other = _.concat(this.array, [3,4])
+    console.log(this.other)
     this.$http.get('listData').then(res => {
       console.log(res)
     })
@@ -42,7 +44,8 @@ export default class App extends Vue {
   mounted () {
     console.log('111111')
     console.log(store)
-    // this.other = _.concat(this.array, [3,4])
+    this.other = _.concat(this.array, [3,4])
+    console.log(this.other)
   }
 }
 </script>
