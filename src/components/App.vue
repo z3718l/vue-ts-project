@@ -55,7 +55,7 @@ export default class App extends Vue {
     padding: 0
   }
   .p1 {
-    color: #ffeebb;
+    color: blue;
   }
   img {
     width: 100px;
