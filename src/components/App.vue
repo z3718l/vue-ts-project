@@ -26,6 +26,8 @@ export default class App extends Vue {
   changeNum(): void {
     console.log('点击')
     console.log(store)
+    console.log(store)
+    console.log(store)
     store.commit('increment')
     this.aa = store.state.count
     console.log(this.aa)
