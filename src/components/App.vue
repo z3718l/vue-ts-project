@@ -11,6 +11,7 @@
       <img src="../assets/images/aa.png" alt="">
     </p>
     <router-link to="/login">Go to Login</router-link>
+    <router-link to="/imgEnlarge">Go to ImgEnlarge</router-link>
     <router-view></router-view>
   </div>
 </template>
@@ -49,7 +50,7 @@ export default class App extends Vue {
     color: #ffeebb;
   }
   img {
-    width: 100px;
-    height: 100px;
+    width: 30px;
+    height: 30px;
   }
 </style>
