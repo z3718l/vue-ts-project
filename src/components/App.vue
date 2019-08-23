@@ -9,7 +9,7 @@
     </p>
     <p><img class="img" src="../assets/images/aa.png" alt=""></p>
     <p>
-      <ImgEnlargeZoomer :image="imgStr"></ImgEnlargeZoomer>
+      <ImgEnlargeZoomer :image="imgStr" width="200" height="200"></ImgEnlargeZoomer>
     </p>
     <router-link to="/login">Go to Login</router-link>
     <router-link to="/imgEnlarge">Go to ImgEnlarge</router-link>

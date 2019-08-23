@@ -1,37 +1,45 @@
 <template>
-  <div>
-    <div>888</div>
-    <div>
+  <div class="image_zoom" ref="magnifier">
+    <div class="image" :style="imageStyle">
       <img :src="image" alt="">
     </div>
   </div>
 </template>
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator'
+import { Vue, Component, Prop } from 'vue-property-decorator'
 @Component({
-  props: {
-    image: {
-      type: String,
-      required: true
-    },
-    width: {
-      type: Number,
-      default: 200
-    },
-    height: {
-      type: Number,
-      default: 200
-    }
-  }
+  
 })
 export default class ImgEnlargeZoomer extends Vue {
-
+  @Prop() image:String
+  @Prop() width:Number
+  @Prop() height:Number
+  props: ['image','width','height']
   get imageStyle() {
     return {
-      // width: this.width + 'px',
-      // height: this.height + 'px'
+      width: this.width + 'px',
+      height: this.height + 'px'
     }
   }
-  
+  mounted () {
+    console.log(this.width)
+  }
 }
 </script>
+<style lang="scss">
+  .image_zoom {
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    cursor: zoom-in;
+    overflow: hidden;
+    .image {
+      width: 400px;
+      height: 400px;
+      img {
+        width: 400px;
+        height: 400px;
+      }
+    }
+  }
+</style>
