@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     Hello Word Vue TS
+    <!-- https://www.cnblogs.com/guo-xu/p/10572711.html -->
+    <!-- https://segmentfault.com/a/1190000010380615 -->
     <br />
       <p class="p1">{{ab}}</p>
       <button @click="changeNum()">点击事件</button>
