@@ -14,11 +14,67 @@
 import { Vue, Component } from 'vue-property-decorator'
 // import PicZoom from 'vue-piczoom'
 @Component({
-  components: {
-    // PicZoom
+  props: {
+    // scale: {
+    //   type: Number,
+    //   default: 2.5
+    // },
+    // url: {
+    //   type: String,
+    //   required: true
+    // },
+    // bigUrl: {
+    //   type: String,
+    //   default: null
+    // },
+    // scroll: {
+    //   type: Boolean,
+    //   default: false
+    // },
+    // showEidt: {
+    //   type: Boolean,
+    //   default: false
+    // }
   }
 })
 export default class ImgEnlarge extends Vue {
+  // 初始化变量
+  id: any = null
+  cover: any = null
+  imgbox: any = null
+  imgwrap: any = null
+  orginUrl: any = null
+  bigImgUrl: any = null
+  bigOrginUrl: any = null
+  imgUrl: any = null
+  img: any = null
+  canvas: any = null
+  ctx: any = null
+  rectTimesX: any = 0
+  rectTimesY: any = 0
+  imgTimesX: any = 0
+  imgTimesY: any = 0
+  init: any = false
+  step: any = 0
+  bigStep: any = 0
+  vertical: any = false
+  showImg: any = true
+
+  // 实例创建之后
+  created() {
+    var $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678'
+    var maxPos = $chars.length
+    var str = ''
+    for (let i = 0; i < 10; i++) {
+      str += $chars.charAt(Math.floor(Math.random() * maxPos));
+　　}
+
+    this.id=str
+    // this.imgUrl=this.url
+    // this.orginUrl=this.url
+    // this.bigImgUrl=this.bigUrl
+    // this.bigOrginUrl=this.bigUrl
+  }
   
 }
 </script>

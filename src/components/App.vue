@@ -7,8 +7,9 @@
     <p>
       <button @click="btnClick()">点击发送请求</button>
     </p>
+    <p><img class="img" src="../assets/images/aa.png" alt=""></p>
     <p>
-      <img src="../assets/images/aa.png" alt="">
+      <ImgEnlargeZoomer :image="imgStr"></ImgEnlargeZoomer>
     </p>
     <router-link to="/login">Go to Login</router-link>
     <router-link to="/imgEnlarge">Go to ImgEnlarge</router-link>
@@ -17,10 +18,17 @@
 </template>
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import { store } from '../store';
+import { store } from '../store'
+import ImgEnlargeZoomer from '../components/ImgEnlargeZoomer.vue'
+@Component({
+  components: {
+    ImgEnlargeZoomer
+  }
+})
 export default class App extends Vue {
   ab: string = '12313321'
   aa: number = 0;
+  imgStr: String = 'https://hpx-pc.oss-cn-beijing.aliyuncs.com/partner/partner1.png'
   changeNum(): void {
     console.log('点击')
     console.log(store)
@@ -36,8 +44,8 @@ export default class App extends Vue {
   }
 
   mounted () {
-    console.log('111111')
-    console.log(store)
+    // console.log('111111')
+    // console.log(store)
   }
 }
 </script>
@@ -49,7 +57,7 @@ export default class App extends Vue {
   .p1 {
     color: #ffeebb;
   }
-  img {
+  .img {
     width: 30px;
     height: 30px;
   }

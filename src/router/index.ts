@@ -1,10 +1,12 @@
 import Router from 'vue-router'
 import Login from '../components/Login.vue'
 import ImgEnlarge from '../components/ImgEnlarge.vue'
+import ImgEnlargeZoomer from '../components/ImgEnlargeZoomer.vue'
 
 const routes = [
   { path: '/login', component: Login },
-  { path: '/imgEnlarge', component: ImgEnlarge }
+  { path: '/imgEnlarge', component: ImgEnlarge },
+  { path: '/imgEnlargeZoomer', component: ImgEnlargeZoomer }
 ]
 
 export const router = new Router({
